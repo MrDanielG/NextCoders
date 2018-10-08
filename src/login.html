@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <span class="word" id="word"></span>
+  <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js"></script>
+  <script>
+
+    var words = ['NextCoders;', 'Freelancer;','Geek;', 'Student;','Nerd;','Teacher;', 'NC;'],
+    wordWrapper = document.getElementById('word'),
+    wordWrapperContent = wordWrapper.innerHTML,
+    addingWord = false,
+    counter = 1;
+
+setInterval(function(){
+
+  if(wordWrapperContent.length > 0 && !addingWord ) {
+    wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
+    wordWrapperContent = wordWrapper.innerHTML;
+  } else {
+    addingWord = true;
+  }
+
+  if( addingWord ){
+    if( wordWrapperContent.length < words[counter].length  ) {
+      wordWrapper.innerHTML = words[counter].slice(0, wordWrapperContent.length + 1);
+      wordWrapperContent = wordWrapper.innerHTML;
+    } else {
+      if( counter < words.length) {
+        counter ++
+      }
+      addingWord = false;
+    }
+  }
+
+  if( counter == words.length) {
+    counter = 0;
+  }
+
+}, 150);
+  </script>
+
+  <h2 class="title">Iniciar sesion o registrate.</h2>
+
+  <button onclick="document.getElementById('id01').style.display='block'"style="wind:auto;">Login</button>
+  <div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="https://image.flaticon.com/icons/png/512/23/23228.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+
+</html>
