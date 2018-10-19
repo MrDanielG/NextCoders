@@ -1,57 +1,44 @@
-<!doctype html>
-<html class="no-js" lang="">
+  <!doctype html>
+  <html lang="es">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  </head>
 
-  <link rel="manifest" href="../site.webmanifest">
-  <link rel="apple-touch-icon" href="../icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="/css/menu.css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-</head>
-
-<body>
-  <!-- MENU GENERAL -->
-  <header>
+  <body>
+    <!-- MENU GENERAL -->
+    <header>
         <div class="container">
-              <h1 class="logo">Next<span>Coders</span></h1>
-
-              <nav class="site-nav">
-                  <ul>
-                        <li><a href=""></a>Inicio</li>
-                        <li><a href=""></a>Trabajos</li>
-                        <li><a href=""></a>Contacto</li>
-                        <li><a href=""></a>Acerca De</li>
-                  </ul>
-              </nav>
-
-              <div class="menu-toogle">
-                    <div class="hamburguer"></div>
-              </div>
-
+      
+          <h1 class="logo">Next<span>Coders</span></h1>
+      
+          <nav class="site-nav">
+            <ul>
+              <li><a href="">Inicio</a></li>
+              <li><a href="">Trabajos</a></li>
+              <li><a href="">Contacto</a></li>
+              <li><a href="">Acerca De</a></li>
+            </ul>
+          </nav>
+      
+          <div class="menu-toggle">
+            <div class="hamburger"></div>
+          </div>
+      
         </div>
-  </header>
+      
+      </header>
 
+  </body>
 
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  </html>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  $('.menu-toggle').click(function() {
+    
+    $('.site-nav').toggleClass('site-nav--open', 500);
+    $(this).toggleClass('open');
+  })
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-</body>
-
-</html>
